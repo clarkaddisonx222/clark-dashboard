@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clark Addison — Executive Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0f172a;--card:#1e293b;--card2:#273548;--accent:#3b82f6;--green:#22c55e;--yellow:#eab308;--red:#ef4444;--purple:#a855f7;--pink:#ec4899;--text:#e2e8f0;--text2:#94a3b8;--border:#334155;--shadow:0 4px 6px -1px rgba(0,0,0,.3)}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:20px}
+.container{max-width:1400px;margin:0 auto}
+
+/* Header */
+.header{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap;gap:16px}
+.header h1{font-size:24px;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.header .subtitle{color:var(--text2);font-size:14px;margin-top:4px}
+.header-right{display:flex;align-items:center;gap:16px}
+.status-badge{display:flex;align-items:center;gap:8px;background:var(--card);padding:8px 16px;border-radius:20px;font-size:13px}
+.status-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+#clock{font-size:14px;color:var(--text2);font-variant-numeric:tabular-nums}
+
+/* Grid */
+.grid{display:grid;gap:20px;margin-bottom:24px}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(400px,1fr))}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+
+/* Cards */
+.card{background:var(--card);border-radius:12px;padding:20px;box-shadow:var(--shadow);border:1px solid var(--border);animation:fadeIn .5s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.card h3{font-size:14px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.card .value{font-size:28px;font-weight:700}
+.card .label{font-size:12px;color:var(--text2);margin-top:4px}
+
+/* Section headers */
+.section-title{font-size:18px;font-weight:700;margin:32px 0 16px;display:flex;align-items:center;gap:10px}
+
+/* Org Chart */
+.org-chart{overflow-x:auto;padding:20px 0}
+.org-node{background:var(--card);border:2px solid var(--border);border-radius:10px;padding:12px 16px;text-align:center;min-width:140px;position:relative}
+.org-node.active{border-color:var(--accent)}
+.org-node.planned{border-color:var(--yellow);opacity:.7}
+.org-node.coming{border-color:var(--border);opacity:.5}
+.org-node .role{font-weight:600;font-size:13px;margin-bottom:2px}
+.org-node .desc{font-size:11px;color:var(--text2)}
+.org-node .badge{font-size:9px;padding:2px 8px;border-radius:10px;display:inline-block;margin-top:6px;font-weight:600;text-transform:uppercase}
+.badge-active{background:rgba(59,130,246,.2);color:var(--accent)}
+.badge-planned{background:rgba(234,179,8,.2);color:var(--yellow)}
+.badge-coming{background:rgba(148,163,184,.2);color:var(--text2)}
+.org-level{display:flex;justify-content:center;gap:16px;margin:20px 0;flex-wrap:wrap}
+.org-connector{width:2px;height:20px;background:var(--border);margin:0 auto}
+.org-branch{display:flex;flex-direction:column;align-items:center}
+.org-sub{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.org-sub .org-node{min-width:120px;padding:8px 12px}
+.org-sub .org-node .role{font-size:11px}
+.org-sub .org-node .desc{font-size:10px}
+
+/* Kanban */
+.kanban{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;min-height:400px}
+@media(max-width:900px){.kanban{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.kanban{grid-template-columns:1fr}}
+.kanban-col{background:var(--card);border-radius:12px;padding:16px;min-height:300px}
+.kanban-col h4{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.kanban-col h4 .count{background:var(--card2);padding:2px 8px;border-radius:10px;font-size:11px}
+.kanban-card{background:var(--card2);border-radius:8px;padding:12px;margin-bottom:8px;cursor:grab;border-left:3px solid var(--accent);transition:transform .15s,box-shadow .15s;font-size:13px}
+.kanban-card:active{cursor:grabbing}
+.kanban-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.kanban-card.dragging{opacity:.5}
+.kanban-card .task-title{font-weight:500;margin-bottom:6px}
+.kanban-card .task-meta{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text2)}
+.tag{padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600}
+.tag-system{background:rgba(59,130,246,.2);color:var(--accent)}
+.tag-psalter{background:rgba(168,85,247,.2);color:var(--purple)}
+.tag-gmail{background:rgba(239,68,68,.2);color:var(--red)}
+.tag-org{background:rgba(34,197,94,.2);color:var(--green)}
+.tag-future{background:rgba(234,179,8,.2);color:var(--yellow)}
+.kanban-col.drag-over{background:var(--card2)}
+
+/* Project Overview */
+.progress-bar-container{background:var(--card2);border-radius:20px;height:24px;overflow:hidden;margin:8px 0}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--purple));border-radius:20px;transition:width 1s ease;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:16px 0}
+.stat-item{background:var(--card2);padding:12px;border-radius:8px;text-align:center}
+.stat-item .stat-val{font-size:20px;font-weight:700;color:var(--accent)}
+.stat-item .stat-label{font-size:11px;color:var(--text2);margin-top:4px}
+.status-row{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}
+.status-item{font-size:12px;display:flex;align-items:center;gap:4px}
+
+/* Timeline */
+.timeline{position:relative;padding-left:24px}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:16px;padding-left:16px}
+.timeline-item::before{content:'';position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--card)}
+.timeline-item .time{font-size:11px;color:var(--text2);font-variant-numeric:tabular-nums}
+.timeline-item .event{font-size:13px;margin-top:2px}
+
+/* Quick Links */
+.quick-links{display:flex;gap:12px;flex-wrap:wrap}
+.quick-link{background:var(--card2);padding:10px 16px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13px;display:flex;align-items:center;gap:8px;transition:background .2s}
+.quick-link:hover{background:var(--accent);color:#fff}
+
+/* Cost Panel */
+.cost-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
+.cost-row:last-child{border:none}
+.cost-row .cost-label{color:var(--text2)}
+.cost-row .cost-val{font-weight:600;font-variant-numeric:tabular-nums}
+
+/* Responsive */
+@media(max-width:600px){
+  body{padding:12px}
+  .header h1{font-size:18px}
+  .card .value{font-size:22px}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h1>🤖 Clark Addison — Executive Dashboard</h1>
+      <div class="subtitle">AI Executive Assistant to Scott Vander Ploeg</div>
+    </div>
+    <div class="header-right">
+      <div id="clock"></div>
+      <div class="status-badge"><div class="status-dot"></div> Online</div>
+    </div>
+  </div>
+
+  <!-- Status Cards -->
+  <div class="grid grid-4">
+    <div class="card" style="animation-delay:.1s">
+      <h3>🧠 Model</h3>
+      <div class="value" style="font-size:16px">Kimi K2.5</div>
+      <div class="label">via OpenRouter (default)<br>Fallbacks: Claude Opus 4.6, Sonnet 4.5, Grok 4</div>
+    </div>
+    <div class="card" style="animation-delay:.2s">
+      <h3>📚 Context Window</h3>
+      <div class="value">262K</div>
+      <div class="label">tokens • compaction reserve 30K</div>
+    </div>
+    <div class="card" style="animation-delay:.3s">
+      <h3>💰 API Costs Today</h3>
+      <div class="value" style="color:var(--green)">$0.02</div>
+      <div class="label">Nexos models: free tier<br>OpenRouter: minimal usage</div>
+    </div>
+    <div class="card" style="animation-delay:.4s">
+      <h3>📅 Session</h3>
+      <div class="value" style="font-size:16px" id="today"></div>
+      <div class="label">Onboarding Day 1</div>
+    </div>
+  </div>
+
+  <!-- Cost & Usage -->
+  <div class="section-title">💳 Cost & Usage Breakdown</div>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>Model Usage</h3>
+      <div class="cost-row"><span class="cost-label">Nexos Claude Opus 4.6</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
+      <div class="cost-row"><span class="cost-label">Nexos Claude Sonnet 4.5</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
+      <div class="cost-row"><span class="cost-label">Nexos Grok 4</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
+      <div class="cost-row"><span class="cost-label">Kimi K2.5 (OpenRouter)</span><span class="cost-val">~$0.02</span></div>
+      <div class="cost-row"><span class="cost-label"><strong>Total Today</strong></span><span class="cost-val"><strong>~$0.02</strong></span></div>
+    </div>
+    <div class="card">
+      <h3>Token Usage</h3>
+      <div class="cost-row"><span class="cost-label">Input tokens (today)</span><span class="cost-val">~85K</span></div>
+      <div class="cost-row"><span class="cost-label">Output tokens (today)</span><span class="cost-val">~12K</span></div>
+      <div class="cost-row"><span class="cost-label">Sessions started</span><span class="cost-val">6</span></div>
+      <div class="cost-row"><span class="cost-label">Sub-agents spawned</span><span class="cost-val">2</span></div>
+      <div class="cost-row"><span class="cost-label">Compactions</span><span class="cost-val">0</span></div>
+    </div>
+    <div class="card">
+      <h3>Capabilities Active</h3>
+      <div class="cost-row"><span class="cost-label">📱 Telegram</span><span class="cost-val" style="color:var(--green)">Connected</span></div>
+      <div class="cost-row"><span class="cost-label">📧 Gmail</span><span class="cost-val" style="color:var(--yellow)">Browser only</span></div>
+      <div class="cost-row"><span class="cost-label">🌐 Web Browser</span><span class="cost-val" style="color:var(--green)">Active</span></div>
+      <div class="cost-row"><span class="cost-label">⏰ Cron/Reminders</span><span class="cost-val" style="color:var(--green)">1 scheduled</span></div>
+      <div class="cost-row"><span class="cost-label">🔍 Web Search</span><span class="cost-val" style="color:var(--red)">No API key</span></div>
+    </div>
+  </div>
+
+  <!-- Org Chart -->
+  <div class="section-title">🏢 Virtual Organization</div>
+  <div class="card">
+    <div class="org-chart">
+      <div class="org-level">
+        <div class="org-node active" style="border-color:var(--green)">
+          <div class="role">👤 Scott Vander Ploeg</div>
+          <div class="desc">Senior Pastor / Principal</div>
+          <span class="badge badge-active" style="background:rgba(34,197,94,.2);color:var(--green)">You</span>
+        </div>
+      </div>
+      <div class="org-connector"></div>
+      <div class="org-level">
+        <div class="org-node active">
+          <div class="role">🤖 Clark Addison</div>
+          <div class="desc">AI CEO / Chief of Staff</div>
+          <span class="badge badge-active">Active</span>
+        </div>
+      </div>
+      <div class="org-connector"></div>
+      <div class="org-level">
+        <div class="org-branch">
+          <div class="org-node active">
+            <div class="role">🎵 Nate Ashford</div>
+            <div class="desc">Psalter Director — Pray150 / SFP</div>
+            <span class="badge badge-planned">Building</span>
+          </div>
+          <div class="org-sub">
+            <div class="org-node active"><div class="role">📋 Micah Torres</div><div class="desc">Catalog Manager</div><span class="badge badge-active">Active</span></div>
+            <div class="org-node planned"><div class="role">✍️ Elise Hartwell</div><div class="desc">Writer & Researcher</div><span class="badge badge-planned">Planned</span></div>
+            <div class="org-node planned"><div class="role">⛪ Josiah Crane</div><div class="desc">Adoption Strategist</div><span class="badge badge-planned">Planned</span></div>
+            <div class="org-node planned"><div class="role">📱 Mara Kinsley</div><div class="desc">Social & Marketing</div><span class="badge badge-planned">Planned</span></div>
+            <div class="org-node planned"><div class="role">🌐 Theo Voss</div><div class="desc">Web Developer</div><span class="badge badge-planned">Planned</span></div>
+            <div class="org-node active"><div class="role">🎹 Selah Briggs</div><div class="desc">Worship Resources</div><span class="badge badge-active">Active</span></div>
+          </div>
+        </div>
+        <div class="org-node coming">
+          <div class="role">📖 222Disciple</div>
+          <div class="desc">Discipleship Program</div>
+          <span class="badge badge-coming">Coming Soon</span>
+        </div>
+        <div class="org-node coming">
+          <div class="role">🎤 PROS / PROS Worship</div>
+          <div class="desc">Public Reading of Scripture</div>
+          <span class="badge badge-coming">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kanban Board -->
+  <div class="section-title">📋 Kanban Board</div>
+  <div class="kanban" id="kanban">
+    <div class="kanban-col" data-status="backlog" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
+      <h4>📥 Backlog <span class="count" id="count-backlog">8</span></h4>
+      <div id="col-backlog"></div>
+    </div>
+    <div class="kanban-col" data-status="progress" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
+      <h4>🔄 In Progress <span class="count" id="count-progress">1</span></h4>
+      <div id="col-progress"></div>
+    </div>
+    <div class="kanban-col" data-status="review" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
+      <h4>👀 Review <span class="count" id="count-review">0</span></h4>
+      <div id="col-review"></div>
+    </div>
+    <div class="kanban-col" data-status="done" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
+      <h4>✅ Done <span class="count" id="count-done">5</span></h4>
+      <div id="col-done"></div>
+    </div>
+  </div>
+
+  <!-- Project Overview -->
+  <div class="section-title">🎵 Pray150 / South Florida Psalter</div>
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Psalter Composition Progress</h3>
+      <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:13px">
+        <span>150 / 150 Psalms Composed</span><span style="color:var(--green);font-weight:600">100%</span>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" style="width:100%">150 / 150</div>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-item"><div class="stat-val">152</div><div class="stat-label">Videos</div></div>
+        <div class="stat-item"><div class="stat-val">10h 44m</div><div class="stat-label">Total Duration</div></div>
+        <div class="stat-item"><div class="stat-val">7</div><div class="stat-label">Revised</div></div>
+        <div class="stat-item"><div class="stat-val">NIV2011</div><div class="stat-label">Text Basis</div></div>
+      </div>
+      <div class="status-row">
+        <div class="status-item">✅ Catalog</div>
+        <div class="status-item">✅ Org Structure</div>
+        <div class="status-item">🔲 Website</div>
+        <div class="status-item">🔲 CCLI Strategy</div>
+        <div class="status-item">🔲 Social Media</div>
+        <div class="status-item">🔲 Podcast</div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>🔗 Quick Links</h3>
+      <div class="quick-links" style="margin-bottom:16px">
+        <a href="https://www.pray150.com" target="_blank" class="quick-link">🙏 Pray150.com</a>
+        <a href="https://youtube.com/playlist?list=PLlAZONCUO1iQr2m19nFmRLyTWdey-iXuh" target="_blank" class="quick-link">🎵 YouTube Playlist</a>
+        <a href="https://mail.google.com" target="_blank" class="quick-link">📧 Gmail</a>
+        <a href="https://docs.openclaw.ai" target="_blank" class="quick-link">📚 OpenClaw Docs</a>
+      </div>
+      <h3 style="margin-top:16px">📜 Recent Activity</h3>
+      <div class="timeline">
+        <div class="timeline-item"><div class="time">4:12 PM</div><div class="event">Selah activated — transcribing Psalm 3 from MP3</div></div>
+        <div class="timeline-item"><div class="time">4:08 PM</div><div class="event">Google Drive confirmed — psalm-3.mp3 accessed</div></div>
+        <div class="timeline-item"><div class="time">7:15 PM</div><div class="event">Master catalog complete — 152 entries, 10h 44m</div></div>
+        <div class="timeline-item"><div class="time">7:09 PM</div><div class="event">Production details & vision captured</div></div>
+        <div class="timeline-item"><div class="time">6:49 PM</div><div class="event">South Florida Psalter overview documented</div></div>
+        <div class="timeline-item"><div class="time">6:34 PM</div><div class="event">Virtual org structure designed</div></div>
+        <div class="timeline-item"><div class="time">6:04 PM</div><div class="event">Fixed Kimi K2.5 context overflow</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:32px 0;color:var(--text2);font-size:12px">
+    Clark Addison — AI Executive Assistant • Built with OpenClaw • February 2026
+  </div>
+</div>
+
+<script>
+// Clock
+function updateClock(){
+  const now=new Date();
+  const opts={timeZone:'America/New_York',weekday:'long',year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'};
+  document.getElementById('clock').textContent=now.toLocaleString('en-US',opts);
+  const dateOpts={timeZone:'America/New_York',weekday:'long',month:'long',day:'numeric',year:'numeric'};
+  document.getElementById('today').textContent=now.toLocaleDateString('en-US',dateOpts);
+}
+updateClock();setInterval(updateClock,1000);
+
+// Kanban data
+const tasks=[
+  {id:1,title:'Fix Kimi K2.5 context overflow',tag:'system',tagLabel:'System',status:'done',date:'Feb 7'},
+  {id:2,title:'Gmail login via browser',tag:'gmail',tagLabel:'Gmail',status:'done',date:'Feb 7'},
+  {id:3,title:'Explore Pray150.com — full site review',tag:'psalter',tagLabel:'Psalter',status:'done',date:'Feb 7'},
+  {id:4,title:'Build South Florida Psalter catalog (152 videos)',tag:'psalter',tagLabel:'Psalter',status:'done',date:'Feb 7'},
+  {id:5,title:'Design virtual org structure',tag:'org',tagLabel:'Organization',status:'done',date:'Feb 7'},
+  {id:6,title:'Selah: Psalm 3 chord chart + lead sheet',tag:'psalter',tagLabel:'Psalter',status:'progress',date:'Feb 10'},
+  {id:7,title:'Gmail programmatic access setup',tag:'gmail',tagLabel:'Gmail',status:'backlog',date:'Mon 2/9'},
+  {id:8,title:'Build South Florida Psalter website',tag:'psalter',tagLabel:'Psalter',status:'backlog',date:'—'},
+  {id:9,title:'CCLI adoption strategy',tag:'psalter',tagLabel:'Psalter',status:'backlog',date:'—'},
+  {id:10,title:'Social media strategy for SFP',tag:'psalter',tagLabel:'Psalter',status:'backlog',date:'—'},
+  {id:11,title:'Research arm — Psalms in Christian worship',tag:'psalter',tagLabel:'Psalter',status:'backlog',date:'—'},
+  {id:12,title:'Podcast launch — South Florida Psalter',tag:'psalter',tagLabel:'Psalter',status:'backlog',date:'—'},
+  {id:13,title:'Chord sheets & multitracks for all 150',tag:'psalter',tagLabel:'Psalter',status:'backlog',date:'—'},
+  {id:14,title:'222Disciple domain setup',tag:'future',tagLabel:'Future',status:'backlog',date:'—'},
+  {id:15,title:'PROS / PROS Worship domain setup',tag:'future',tagLabel:'Future',status:'backlog',date:'—'},
+];
+
+function renderKanban(){
+  ['backlog','progress','review','done'].forEach(s=>{
+    const col=document.getElementById('col-'+s);
+    col.innerHTML='';
+    const items=tasks.filter(t=>t.status===s);
+    document.getElementById('count-'+s).textContent=items.length;
+    items.forEach(t=>{
+      const card=document.createElement('div');
+      card.className='kanban-card';
+      card.draggable=true;
+      card.dataset.id=t.id;
+      card.innerHTML=`<div class="task-title">${t.title}</div><div class="task-meta"><span class="tag tag-${t.tag}">${t.tagLabel}</span><span>${t.date}</span></div>`;
+      card.ondragstart=e=>{e.dataTransfer.setData('text/plain',t.id);card.classList.add('dragging')};
+      card.ondragend=()=>card.classList.remove('dragging');
+      col.appendChild(card);
+    });
+  });
+}
+
+function dragover(e){e.preventDefault();e.currentTarget.classList.add('drag-over')}
+function dragleave(e){e.currentTarget.classList.remove('drag-over')}
+function drop(e){
+  e.preventDefault();
+  e.currentTarget.classList.remove('drag-over');
+  const id=parseInt(e.dataTransfer.getData('text/plain'));
+  const newStatus=e.currentTarget.dataset.status;
+  const task=tasks.find(t=>t.id===id);
+  if(task){task.status=newStatus;renderKanban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
