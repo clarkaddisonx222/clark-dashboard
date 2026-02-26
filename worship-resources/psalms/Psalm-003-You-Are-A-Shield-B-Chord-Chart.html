@@ -3,156 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psalm 3 - You Are A Shield | Chord Chart</title>
+    <title>Psalm 3 - You Are A Shield</title>
     <style>
         @media print {
             body {
-                font-size: 11pt;
-                line-height: 1.4;
+                font-size: 10pt;
+                line-height: 1.3;
             }
             .page-break {
                 page-break-before: always;
             }
+            .no-break {
+                page-break-inside: avoid;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 800px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 20px;
-            color: #333;
+            padding: 20px 30px;
+            color: #222;
             background: white;
         }
         
-        h1 {
-            font-size: 24pt;
+        /* Header */
+        .header {
             text-align: center;
-            margin-bottom: 5px;
-            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px double #333;
+        }
+        
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            margin-bottom: 3px;
+            letter-spacing: -0.5px;
         }
         
         .subtitle {
-            text-align: center;
-            font-size: 12pt;
+            font-size: 10pt;
+            color: #555;
+            font-style: italic;
+        }
+        
+        .meta {
+            font-size: 9pt;
             color: #666;
-            margin-bottom: 30px;
+            margin-top: 8px;
         }
         
+        /* Song Sections - Two Column */
+        .song-content {
+            column-count: 2;
+            column-gap: 40px;
+            column-rule: 1px solid #ddd;
+        }
+        
+        @media print {
+            .song-content {
+                column-count: 2;
+                column-gap: 35px;
+            }
+        }
+        
+        /* Section Headers */
         h2 {
-            font-size: 14pt;
-            font-weight: bold;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-        }
-        
-        h3 {
-            font-size: 12pt;
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 8px;
-            color: #34495e;
-        }
-        
-        .chord-section {
-            margin-bottom: 20px;
-            font-family: 'Courier New', monospace;
             font-size: 11pt;
-            line-height: 1.8;
-            white-space: pre;
-            overflow-x: auto;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            color: #000;
+            border-bottom: 2px solid #333;
+            padding-bottom: 3px;
+            column-span: all;
+        }
+        
+        h2:first-child {
+            margin-top: 0;
+        }
+        
+        /* Chord Sections */
+        .chord-section {
+            margin-bottom: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 9.5pt;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
         
         .chord {
             font-weight: bold;
-            color: #c0392b;
+            color: #000;
         }
         
-        .lyrics {
-            color: #2c3e50;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-        
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        
-        th {
-            background-color: #f8f9fa;
-            font-weight: bold;
-        }
-        
-        .chords-table td:first-child {
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-        }
-        
+        /* Intro/Outro box */
         .intro-outro {
             font-family: 'Courier New', monospace;
-            background: #f8f9fa;
-            padding: 10px;
-            border-left: 4px solid #3498db;
-            margin: 10px 0;
-        }
-        
-        .notes {
             font-size: 10pt;
-            color: #555;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
+            background: #f5f5f5;
+            padding: 8px 12px;
+            border-left: 3px solid #333;
+            margin: 10px 0;
+            font-weight: bold;
         }
         
-        .footer {
-            text-align: center;
+        /* Repeat indicator */
+        .repeat {
+            font-style: italic;
+            color: #555;
             font-size: 9pt;
-            color: #999;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
+            margin: 8px 0;
+        }
+        
+        /* Page break utility */
+        .page-break {
+            column-span: all;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+        
+        /* Chord Reference - Compact */
+        .chord-ref {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 2px solid #333;
+            column-span: all;
+        }
+        
+        .chord-ref h3 {
+            font-size: 10pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .chord-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            font-size: 8.5pt;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .chord-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 3px 6px;
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .chord-name {
+            font-weight: bold;
+        }
+        
+        .capo-note {
+            font-size: 8pt;
+            color: #555;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        /* Keep sections together */
+        .no-break {
+            break-inside: avoid;
+            page-break-inside: avoid;
         }
     </style>
 </head>
 <body>
-    <h1>Psalm 3</h1>
-    <div class="subtitle">
-        <strong>You Are A Shield</strong><br>
-        South Florida Psalter | Key: <strong>B</strong> | BPM: <strong>143</strong>
+    <div class="header">
+        <h1>Psalm 3</h1>
+        <div class="subtitle">You Are A Shield</div>
+        <div class="meta">
+            South Florida Psalter | Key: <strong>B</strong> | BPM: <strong>143</strong> | Time: 4/4
+        </div>
     </div>
 
-    <h2>Chords</h2>
-    <table class="chords-table">
-        <tr><th>Chord</th><th>Notes</th></tr>
-        <tr><td>B</td><td>B - D♯ - F♯</td></tr>
-        <tr><td>E</td><td>E - G♯ - B</td></tr>
-        <tr><td>G♯m</td><td>G♯ - B - D♯</td></tr>
-        <tr><td>F♯</td><td>F♯ - A♯ - C♯</td></tr>
-        <tr><td>F♯sus4</td><td>F♯ - B - C♯</td></tr>
-        <tr><td>Bsus2</td><td>B - C♯ - F♯</td></tr>
-        <tr><td>Esus2</td><td>E - F♯ - B</td></tr>
-        <tr><td>D♯m</td><td>D♯ - F♯ - A♯</td></tr>
-        <tr><td>EM7</td><td>E - G♯ - B - D♯</td></tr>
-    </table>
+    <div class="song-content">
+        <h2>Intro</h2>
+        <div class="intro-outro no-break">| B | E | B | E |</div>
 
-    <h2>Song Structure</h2>
-    <p>Intro → Verse 1 → Chorus → Verse 2 → Chorus → Bridge 1 → Bridge 2 → Chorus → Outro</p>
-
-    <h2>Intro</h2>
-    <div class="intro-outro">| B | E | B | E |</div>
-
-    <div class="page-break"></div>
-
-    <h2>Verse 1</h2>
-    <div class="chord-section">    B       E       B
+        <h2>Verse 1</h2>
+        <div class="chord-section no-break">    B       E       B
 Lord, how many are my foes!
     G#m         E         B
 How many rise up against me!
@@ -161,8 +205,8 @@ Many are saying of me,
                F#sus4
 "God will not deliver him."</div>
 
-    <h2>Chorus</h2>
-    <div class="chord-section">    Bsus2                     F#sus4
+        <h2>Chorus</h2>
+        <div class="chord-section no-break">    Bsus2                     F#sus4
 But you, Lord, are a shield around me,
     G#m
 my glory, the One
@@ -173,8 +217,8 @@ I call out to the Lord,
     F#sus4                      E    F#sus4  B   [E]
 and he answers me from his ho - ly mountain.</div>
 
-    <h2>Verse 2</h2>
-    <div class="chord-section">    B       E       B
+        <h2>Verse 2</h2>
+        <div class="chord-section no-break">    B       E       B
 I lie down and sleep;
     G#m       B
 I wake again,
@@ -185,11 +229,11 @@ I will not fear though tens of thousands
 B                       E
 assail me on every side.</div>
 
-    <h2>Chorus</h2>
-    <p>(Repeat Chorus)</p>
+        <h2>Chorus</h2>
+        <p class="repeat no-break">(Repeat Chorus)</p>
 
-    <h2>Bridge 1</h2>
-    <div class="chord-section">    B               E
+        <h2>Bridge 1</h2>
+        <div class="chord-section no-break">    B               E
 Arise, Lord!
     G#m              F#sus4
 Deliver me, my God!
@@ -198,8 +242,8 @@ Strike all my enemies on the jaw;
     E              F#sus4
 break the teeth of the wicked.</div>
 
-    <h2>Bridge 2</h2>
-    <div class="chord-section">    Bsus2                        F#sus4
+        <h2>Bridge 2</h2>
+        <div class="chord-section no-break">    Bsus2                        F#sus4
 From the Lord comes deliverance.
     B      Bsus2       Esus2
 May your blessing be on your people.
@@ -208,49 +252,27 @@ From the Lord comes deliverance.
     G#m                          EM7
 May your blessing be on your people.</div>
 
-    <h2>Chorus</h2>
-    <p>(Repeat Chorus)</p>
+        <h2>Chorus</h2>
+        <p class="repeat no-break">(Repeat Chorus)</p>
 
-    <h2>Outro</h2>
-    <div class="intro-outro">| B | E | B | E | B |</div>
-
-    <div class="page-break"></div>
-
-    <h2>Chord Shapes (Guitar - No Capo)</h2>
-    <table class="chords-table">
-        <tr><th>Chord</th><th>Voicing</th></tr>
-        <tr><td>B</td><td>x24442</td></tr>
-        <tr><td>E</td><td>022100</td></tr>
-        <tr><td>G#m</td><td>466444</td></tr>
-        <tr><td>F#</td><td>244322</td></tr>
-        <tr><td>F#sus4</td><td>244422</td></tr>
-        <tr><td>Bsus2</td><td>x24422</td></tr>
-        <tr><td>Esus2</td><td>022200</td></tr>
-        <tr><td>D#m</td><td>x68876</td></tr>
-        <tr><td>EM7</td><td>021100</td></tr>
-    </table>
-
-    <p><strong>Capo Option:</strong> Capo 4, play in G shapes: B→G | E→C | G#m→Em | F#→D</p>
-
-    <div class="notes">
-        <h2>Notes</h2>
-        <ul>
-            <li><strong>Original Recording:</strong> Psalm 3 by Scott Vander Ploeg (South Florida Psalter)</li>
-            <li><strong>Source:</strong> YouTube - youtube.com/watch?v=YyknwMjH12o</li>
-            <li><strong>Key:</strong> B Major (5 sharps: F♯, C♯, G♯, D♯, A♯)</li>
-            <li><strong>Tempo:</strong> 143 BPM</li>
-            <li><strong>Time Signature:</strong> 4/4</li>
-            <li><strong>Created:</strong> February 2026</li>
-        </ul>
-        <p><strong>Chord Analysis:</strong><br>
-        Primary: B, E (I-IV progression)<br>
-        Minor: G♯m (vi), D♯m (iii)<br>
-        Suspended: F♯sus4, Bsus2, Esus2<br>
-        Color: EM7 (IV maj7)</p>
+        <h2>Outro</h2>
+        <div class="intro-outro no-break">| B | E | B | E | B |</div>
     </div>
 
-    <div class="footer">
-        © South Florida Psalter | Chord Chart for Worship Use
+    <div class="chord-ref">
+        <h3>Chord Reference</h3>
+        <div class="chord-grid">
+            <div class="chord-item"><span class="chord-name">B</span><span>x24442</span></div>
+            <div class="chord-item"><span class="chord-name">E</span><span>022100</span></div>
+            <div class="chord-item"><span class="chord-name">G#m</span><span>466444</span></div>
+            <div class="chord-item"><span class="chord-name">F#</span><span>244322</span></div>
+            <div class="chord-item"><span class="chord-name">F#sus4</span><span>244422</span></div>
+            <div class="chord-item"><span class="chord-name">Bsus2</span><span>x24422</span></div>
+            <div class="chord-item"><span class="chord-name">Esus2</span><span>022200</span></div>
+            <div class="chord-item"><span class="chord-name">D#m</span><span>x68876</span></div>
+            <div class="chord-item"><span class="chord-name">EM7</span><span>021100</span></div>
+        </div>
+        <p class="capo-note">Capo 4: B→G | E→C | G#m→Em | F#→D</p>
     </div>
 </body>
 </html>
