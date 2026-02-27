@@ -144,13 +144,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
     <div class="card" style="animation-delay:.3s">
       <h3>💰 API Costs Today</h3>
-      <div class="value" style="color:var(--green)">$0.01</div>
-      <div class="label">Nexos models: free tier<br>OpenRouter: cron monitoring only</div>
+      <div class="value" style="color:var(--green)">$0.02</div>
+      <div class="label">Nexos models: free tier<br>OpenRouter: cron + dashboard ops</div>
     </div>
     <div class="card" style="animation-delay:.4s">
       <h3>📅 Session</h3>
       <div class="value" style="font-size:16px" id="today"></div>
-      <div class="label">Day 19 • Last Work: Feb 26 (Today)</div>
+      <div class="label">Day 20 • Last Work: Feb 27 (Today)</div>
     </div>
   </div>
 
@@ -167,10 +167,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
     <div class="card">
       <h3>Token Usage</h3>
-      <div class="cost-row"><span class="cost-label">Input tokens (today)</span><span class="cost-val">~120K</span></div>
-      <div class="cost-row"><span class="cost-label">Output tokens (today)</span><span class="cost-val">~25K</span></div>
-      <div class="cost-row"><span class="cost-label">Sessions started</span><span class="cost-val">8</span></div>
-      <div class="cost-row"><span class="cost-label">Sub-agents spawned</span><span class="cost-val">3</span></div>
+      <div class="cost-row"><span class="cost-label">Input tokens (today)</span><span class="cost-val">~150K</span></div>
+      <div class="cost-row"><span class="cost-label">Output tokens (today)</span><span class="cost-val">~35K</span></div>
+      <div class="cost-row"><span class="cost-label">Sessions started</span><span class="cost-val">12</span></div>
+      <div class="cost-row"><span class="cost-label">Sub-agents spawned</span><span class="cost-val">5</span></div>
       <div class="cost-row"><span class="cost-label">Compactions</span><span class="cost-val">0</span></div>
     </div>
     <div class="card">
@@ -178,7 +178,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div class="cost-row"><span class="cost-label">📱 Telegram</span><span class="cost-val" style="color:var(--green)">Connected</span></div>
       <div class="cost-row"><span class="cost-label">📧 Gmail</span><span class="cost-val" style="color:var(--yellow)">Browser only</span></div>
       <div class="cost-row"><span class="cost-label">🌐 Web Browser</span><span class="cost-val" style="color:var(--green)">Active</span></div>
-      <div class="cost-row"><span class="cost-label">⏰ Cron/Reminders</span><span class="cost-val" style="color:var(--green)">1 scheduled</span></div>
+      <div class="cost-row"><span class="cost-label">⏰ Cron/Reminders</span><span class="cost-val" style="color:var(--green)">2 scheduled</span></div>
       <div class="cost-row"><span class="cost-label">🔍 Web Search</span><span class="cost-val" style="color:var(--red)">No API key</span></div>
     </div>
   </div>
@@ -208,12 +208,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
           <div class="org-node active">
             <div class="role">🎵 Nate Ashford</div>
             <div class="desc">Psalter Director — Pray150 / SFP</div>
-            <span class="badge badge-planned">Building</span>
+            <span class="badge badge-active">Active</span>
           </div>
           <div class="org-sub">
-            <div class="org-node active"><div class="role">📋 Micah Torres</div><div class="desc">Catalog Manager</div><span class="badge badge-active">Active</span></div>
-            <div class="org-node active"><div class="role">✍️ Elise Hartwell</div><div class="desc">Writer & Researcher</div><span class="badge badge-active">Active</span></div>
-            <div class="org-node active"><div class="role">⛪ Josiah Crane</div><div class="desc">Adoption Strategist</div><span class="badge badge-active">Active</span></div>
+            <div class="org-node active"><div class="role">📋 Micah Torres</div><div class="desc">Catalog Manager</div><span class="badge badge-active">Complete</span></div>
+            <div class="org-node active"><div class="role">✍️ Elise Hartwell</div><div class="desc">Writer & Researcher</div><span class="badge badge-active">Complete</span></div>
+            <div class="org-node active"><div class="role">⛪ Josiah Crane</div><div class="desc">Adoption Strategist</div><span class="badge badge-active">Complete</span></div>
             <div class="org-node active"><div class="role">📱 Mara Kinsley</div><div class="desc">Social & Marketing</div><span class="badge badge-active">Active</span></div>
             <div class="org-node planned"><div class="role">🌐 Theo Voss</div><div class="desc">Web Developer</div><span class="badge badge-planned">Planned</span></div>
             <div class="org-node active"><div class="role">🎹 Selah Briggs</div><div class="desc">Worship Resources</div><span class="badge badge-active">Active</span></div>
@@ -241,7 +241,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div id="col-backlog"></div>
     </div>
     <div class="kanban-col" data-status="progress" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
-      <h4>🔄 In Progress <span class="count" id="count-progress">0</span></h4>
+      <h4>🔄 In Progress <span class="count" id="count-progress">1</span></h4>
       <div id="col-progress"></div>
     </div>
     <div class="kanban-col" data-status="review" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
@@ -249,7 +249,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div id="col-review"></div>
     </div>
     <div class="kanban-col" data-status="done" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
-      <h4>✅ Done <span class="count" id="count-done">9</span></h4>
+      <h4>✅ Done <span class="count" id="count-done">11</span></h4>
       <div id="col-done"></div>
     </div>
   </div>
@@ -258,18 +258,18 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
   <div class="section-title">🎵 Pray150 / South Florida Psalter</div>
   <div class="grid grid-2">
     <div class="card">
-      <h3>Psalter Composition Progress</h3>
+      <h3>Chord Chart Production Progress</h3>
       <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:13px">
-        <span>150 / 150 Psalms Composed</span><span style="color:var(--green);font-weight:600">100%</span>
+        <span>5 / 150 Psalm Chord Charts</span><span style="color:var(--accent);font-weight:600">3%</span>
       </div>
       <div class="progress-bar-container">
-        <div class="progress-bar" style="width:100%">150 / 150</div>
+        <div class="progress-bar" style="width:3%">5 / 150</div>
       </div>
       <div class="stat-grid">
         <div class="stat-item"><div class="stat-val">152</div><div class="stat-label">Videos</div></div>
         <div class="stat-item"><div class="stat-val">10h 44m</div><div class="stat-label">Total Duration</div></div>
         <div class="stat-item"><div class="stat-val" style="color:var(--green)">5</div><div class="stat-label">Chord Charts ✓</div></div>
-        <div class="stat-item"><div class="stat-val">NIV2011</div><div class="stat-label">Text Basis</div></div>
+        <div class="stat-item"><div class="stat-val">1</div><div class="stat-label">In Review</div></div>
       </div>
       <div class="status-row">
         <div class="status-item">✅ Catalog</div>
@@ -277,6 +277,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <div class="status-item">✅ CCLI Strategy</div>
         <div class="status-item">✅ Social Media</div>
         <div class="status-item">✅ Research Team</div>
+        <div class="status-item">🔄 Chord Charts (Ps 1-5)</div>
         <div class="status-item">🔲 Website</div>
         <div class="status-item">🔲 Podcast</div>
       </div>
@@ -291,24 +292,22 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <h3 style="margin-top:16px">📜 Recent Activity</h3>
       <div class="timeline">
-        <div class="timeline-item"><div class="time">Feb 26 4:30 PM ET</div><div class="event">Dashboard afternoon update — Day 19 status refreshed ✅</div></div>
+        <div class="timeline-item"><div class="time">Feb 27 4:30 PM ET</div><div class="event">Dashboard afternoon update — Day 20 status refreshed ✅</div></div>
+        <div class="timeline-item"><div class="time">Feb 27 12:00 PM ET</div><div class="event">Multi-tool verification workflow documented and active</div></div>
+        <div class="timeline-item"><div class="time">Feb 27 2:00 AM ET</div><div class="event">Psalm 4 chord chart — In review, awaiting Scott verification</div></div>
         <div class="timeline-item"><div class="time">Feb 26 1:00 AM ET</div><div class="event">Evening batch — Psalms 1-5 chord charts created ✅</div></div>
         <div class="timeline-item"><div class="time">Feb 26 12:30 AM ET</div><div class="event">Selah Briggs activated — Worship Resources role live</div></div>
         <div class="timeline-item"><div class="time">Feb 26 12:15 AM ET</div><div class="event">Mara Kinsley activated — Social Media concepts drafted</div></div>
         <div class="timeline-item"><div class="time">Feb 25 4:30 PM ET</div><div class="event">Dashboard afternoon update — current status reviewed ✅</div></div>
-        <div class="timeline-item"><div class="time">Feb 25 6:00 AM ET</div><div class="event">Dashboard morning update — automated cron sync ✅</div></div>
-        <div class="timeline-item"><div class="time">Feb 24 9:30 PM</div><div class="event">Dashboard afternoon update — Chrome extension relay operational ✅</div></div>
-        <div class="timeline-item"><div class="time">Feb 24 4:30 PM</div><div class="event">Browser relay tested — Chordify & EBSCO tabs accessible</div></div>
+        <div class="timeline-item"><div class="time">Feb 24 9:30 PM</div><div class="event">Chrome extension relay operational — Chordify access restored ✅</div></div>
         <div class="timeline-item"><div class="time">Feb 10 4:12 PM</div><div class="event">Selah completed — Psalm 3 chord chart + lead sheet done ✅</div></div>
         <div class="timeline-item"><div class="time">Feb 7 7:15 PM</div><div class="event">Master catalog complete — 152 entries, 10h 44m</div></div>
-        <div class="timeline-item"><div class="time">Feb 7 6:34 PM</div><div class="event">Virtual org structure designed</div></div>
-        <div class="timeline-item"><div class="time">Feb 7 6:04 PM</div><div class="event">Fixed Kimi K2.5 context overflow</div></div>
       </div>
     </div>
   </div>
 
   <div style="text-align:center;padding:32px 0;color:var(--text2);font-size:12px">
-    Clark Addison — AI Executive Assistant • Built with OpenClaw • February 2026 • Updated Thursday, Feb 26 4:30 PM ET
+    Clark Addison — AI Executive Assistant • Built with OpenClaw • February 2026 • Updated Friday, Feb 27 4:30 PM ET
   </div>
 </div>
 
@@ -335,13 +334,15 @@ const tasks=[
   {id:18,title:'Create Psalms 1-5 chord charts',tag:'psalter',tagLabel:'Psalter',status:'done',date:'Feb 26 ✅'},
   {id:19,title:'Activate Selah Briggs — Worship Resources',tag:'org',tagLabel:'Organization',status:'done',date:'Feb 26 ✅'},
   {id:20,title:'Activate Mara Kinsley — Social Media',tag:'org',tagLabel:'Organization',status:'done',date:'Feb 26 ✅'},
+  {id:21,title:'Multi-tool verification workflow',tag:'system',tagLabel:'System',status:'done',date:'Feb 27 ✅'},
+  {id:22,title:'Psalm 4 chord chart — verify with Scott',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Feb 27 🔄'},
   {id:7,title:'Gmail programmatic access setup',tag:'gmail',tagLabel:'Gmail',status:'backlog',date:'Pending'},
   {id:8,title:'Build South Florida Psalter website',tag:'psalter',tagLabel:'Psalter',status:'backlog',date:'Theo queued'},
   {id:9,title:'CCLI adoption strategy',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Josiah done ✅'},
   {id:10,title:'Social media strategy for SFP',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Mara done ✅'},
   {id:11,title:'Research arm — Psalms in Christian worship',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Elise done ✅'},
   {id:12,title:'Podcast launch — South Florida Psalter',tag:'psalter',tagLabel:'Psalter',status:'backlog',date:'Future'},
-  {id:13,title:'Chord sheets & multitracks for all 150',tag:'psalter',tagLabel:'Psalter',status:'backlog',date:'Selah: 5/150'},
+  {id:13,title:'Chord sheets & multitracks for all 150',tag:'psalter',tagLabel:'Psalter',status:'progress',date:'Selah: 5/150'},
   {id:14,title:'222Disciple domain setup',tag:'future',tagLabel:'Future',status:'backlog',date:'—'},
   {id:15,title:'PROS / PROS Worship domain setup',tag:'future',tagLabel:'Future',status:'backlog',date:'—'},
 ];
