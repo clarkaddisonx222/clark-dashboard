@@ -144,13 +144,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
     <div class="card" style="animation-delay:.3s">
       <h3>💰 API Costs Today</h3>
-      <div class="value" style="color:var(--green)">$0.05</div>
-      <div class="label">Nexos models: free tier<br>OpenRouter: cron + dashboard ops</div>
+      <div class="value" style="color:var(--green)">$0.02</div>
+      <div class="label">Nexos models: free tier<br>OpenRouter: minimal (cron only)</div>
     </div>
     <div class="card" style="animation-delay:.4s">
       <h3>📅 Session</h3>
       <div class="value" style="font-size:16px" id="today"></div>
-      <div class="label">Day 22 • Last Work: Mar 1 (Today)</div>
+      <div class="label">Day 23 • Last Work: Feb 28 (Psalm 4)</div>
     </div>
   </div>
 
@@ -162,15 +162,15 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div class="cost-row"><span class="cost-label">Nexos Claude Opus 4.6</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
       <div class="cost-row"><span class="cost-label">Nexos Claude Sonnet 4.5</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
       <div class="cost-row"><span class="cost-label">Nexos Grok 4</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
-      <div class="cost-row"><span class="cost-label">Kimi K2.5 (OpenRouter)</span><span class="cost-val">~$0.05</span></div>
-      <div class="cost-row"><span class="cost-label"><strong>Total Today</strong></span><span class="cost-val"><strong>~$0.05</strong></span></div>
+      <div class="cost-row"><span class="cost-label">Kimi K2.5 (OpenRouter)</span><span class="cost-val">~$0.02</span></div>
+      <div class="cost-row"><span class="cost-label"><strong>Total Today</strong></span><span class="cost-val"><strong>~$0.02</strong></span></div>
     </div>
     <div class="card">
       <h3>Token Usage</h3>
-      <div class="cost-row"><span class="cost-label">Input tokens (today)</span><span class="cost-val">~180K</span></div>
-      <div class="cost-row"><span class="cost-label">Output tokens (today)</span><span class="cost-val">~42K</span></div>
-      <div class="cost-row"><span class="cost-label">Sessions started</span><span class="cost-val">14</span></div>
-      <div class="cost-row"><span class="cost-label">Sub-agents spawned</span><span class="cost-val">6</span></div>
+      <div class="cost-row"><span class="cost-label">Input tokens (today)</span><span class="cost-val">~110K</span></div>
+      <div class="cost-row"><span class="cost-label">Output tokens (today)</span><span class="cost-val">~3.3K</span></div>
+      <div class="cost-row"><span class="cost-label">Sessions started</span><span class="cost-val">2</span></div>
+      <div class="cost-row"><span class="cost-label">Sub-agents spawned</span><span class="cost-val">0</span></div>
       <div class="cost-row"><span class="cost-label">Compactions</span><span class="cost-val">0</span></div>
     </div>
     <div class="card">
@@ -237,11 +237,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
   <div class="section-title">📋 Kanban Board</div>
   <div class="kanban" id="kanban">
     <div class="kanban-col" data-status="backlog" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
-      <h4>📥 Backlog <span class="count" id="count-backlog">5</span></h4>
+      <h4>📥 Backlog <span class="count" id="count-backlog">4</span></h4>
       <div id="col-backlog"></div>
     </div>
     <div class="kanban-col" data-status="progress" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
-      <h4>🔄 In Progress <span class="count" id="count-progress">1</span></h4>
+      <h4>🔄 In Progress <span class="count" id="count-progress">2</span></h4>
       <div id="col-progress"></div>
     </div>
     <div class="kanban-col" data-status="review" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
@@ -249,7 +249,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div id="col-review"></div>
     </div>
     <div class="kanban-col" data-status="done" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
-      <h4>✅ Done <span class="count" id="count-done">12</span></h4>
+      <h4>✅ Done <span class="count" id="count-done">14</span></h4>
       <div id="col-done"></div>
     </div>
   </div>
@@ -260,16 +260,16 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <div class="card">
       <h3>Chord Chart Production Progress</h3>
       <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:13px">
-        <span>1 / 150 Psalm Chord Charts</span><span style="color:var(--accent);font-weight:600">0.7%</span>
+        <span>2 / 150 Psalm Chord Charts</span><span style="color:var(--accent);font-weight:600">1.3%</span>
       </div>
       <div class="progress-bar-container">
-        <div class="progress-bar" style="width:0.7%">1 / 150</div>
+        <div class="progress-bar" style="width:1.3%">2 / 150</div>
       </div>
       <div class="stat-grid">
         <div class="stat-item"><div class="stat-val">152</div><div class="stat-label">Videos</div></div>
         <div class="stat-item"><div class="stat-val">10h 44m</div><div class="stat-label">Total Duration</div></div>
-        <div class="stat-item"><div class="stat-val" style="color:var(--green)">1</div><div class="stat-label">Chord Charts ✓</div></div>
-        <div class="stat-item"><div class="stat-val">1</div><div class="stat-label">In Review</div></div>
+        <div class="stat-item"><div class="stat-val" style="color:var(--green)">2</div><div class="stat-label">Chord Charts ✓</div></div>
+        <div class="stat-item"><div class="stat-val">0</div><div class="stat-label">In Review</div></div>
       </div>
       <div class="status-row">
         <div class="status-item">✅ Catalog</div>
@@ -277,7 +277,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <div class="status-item">✅ CCLI Strategy</div>
         <div class="status-item">✅ Social Media</div>
         <div class="status-item">✅ Research Team</div>
-        <div class="status-item">🔄 Chord Charts (Psalm 3)</div>
+        <div class="status-item">✅ Psalm 3 & 4</div>
+        <div class="status-item">🔄 Psalm 5 (Next)</div>
         <div class="status-item">🔲 Website (Theo)</div>
         <div class="status-item">🔲 Podcast</div>
       </div>
@@ -292,9 +293,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <h3 style="margin-top:16px">📜 Recent Activity</h3>
       <div class="timeline">
-        <div class="timeline-item"><div class="time">Mar 1 9:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 22 progress reviewed ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 1 6:00 AM ET</div><div class="event">Dashboard morning update — Day 22 status refreshed ✅</div></div>
-        <div class="timeline-item"><div class="time">Feb 28 4:30 PM ET</div><div class="event">Dashboard afternoon update — Day 21 progress reviewed ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 2 11:00 AM UTC</div><div class="event">Dashboard morning update — Day 23 status, quiet weekend noted ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 1 —</div><div class="event">Quiet Sunday — No active work, rest day observed</div></div>
+        <div class="timeline-item"><div class="time">Feb 28 10:30 PM ET</div><div class="event">Psalm 4 finalized — B Major, NIV-verified, PDF complete ✅</div></div>
         <div class="timeline-item"><div class="time">Feb 28 6:00 AM ET</div><div class="event">Dashboard morning update — Day 21 status refreshed ✅</div></div>
         <div class="timeline-item"><div class="time">Feb 27 4:30 PM ET</div><div class="event">Dashboard afternoon update — Day 20 status reviewed ✅</div></div>
         <div class="timeline-item"><div class="time">Feb 27 12:00 PM ET</div><div class="event">Multi-tool verification workflow documented and active</div></div>
@@ -310,7 +311,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
   </div>
 
   <div style="text-align:center;padding:32px 0;color:var(--text2);font-size:12px">
-    Clark Addison — AI Executive Assistant • Built with OpenClaw • March 2026 • Updated Sunday, Mar 1 9:30 PM UTC
+    Clark Addison — AI Executive Assistant • Built with OpenClaw • March 2026 • Updated Monday, Mar 2 11:00 AM UTC
   </div>
 </div>
 
@@ -345,7 +346,8 @@ const tasks=[
   {id:10,title:'Social media strategy for SFP',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Mara done ✅'},
   {id:11,title:'Research arm — Psalms in Christian worship',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Elise done ✅'},
   {id:12,title:'Podcast launch — South Florida Psalter',tag:'psalter',tagLabel:'Psalter',status:'backlog',date:'Future'},
-  {id:13,title:'Chord sheets & multitracks for all 150',tag:'psalter',tagLabel:'Psalter',status:'progress',date:'Selah: 1/150'},
+  {id:13,title:'Chord sheets & multitracks for all 150',tag:'psalter',tagLabel:'Psalter',status:'progress',date:'Selah: 2/150'},
+  {id:23,title:'Psalm 5 chord chart production',tag:'psalter',tagLabel:'Psalter',status:'progress',date:'Next up'},
   {id:14,title:'222Disciple domain setup',tag:'future',tagLabel:'Future',status:'backlog',date:'—'},
   {id:15,title:'PROS / PROS Worship domain setup',tag:'future',tagLabel:'Future',status:'backlog',date:'—'},
 ];
