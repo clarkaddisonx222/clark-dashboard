@@ -277,9 +277,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <div class="status-item">✅ CCLI Strategy</div>
         <div class="status-item">✅ Social Media</div>
         <div class="status-item">✅ Research Team</div>
-        <div class="status-item">✅ Psalm 3 & 4</div>
-        <div class="status-item">🔄 Psalm 5 (Next)</div>
-        <div class="status-item">🔲 Website (Theo)</div>
+        <div class="status-item">✅ Psalms 1-5 Charts</div>
+        <div class="status-item">✅ Website Redesign</div>
+        <div class="status-item">✅ Blog Launched</div>
+        <div class="status-item">🔄 Psalm 6 (Next)</div>
         <div class="status-item">🔲 Podcast</div>
       </div>
     </div>
@@ -293,6 +294,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <h3 style="margin-top:16px">📜 Recent Activity</h3>
       <div class="timeline">
+        <div class="timeline-item"><div class="time">Mar 16 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 40, SFP website live, blog launched with first post ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 15 — 11:00 PM UTC</div><div class="event">Elise completes first blog post — "Why the Psalms Matter" published to 95 Theses series ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 15 — 6:00 PM UTC</div><div class="event">SFP Website redesign deployed — new logo, hero slideshow, dark theme, resources section ✅</div></div>
         <div class="timeline-item"><div class="time">Mar 15 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 39, quiet Sunday continues, evening check-in ✅</div></div>
         <div class="timeline-item"><div class="time">Mar 15 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 39, quiet overnight continues, Sunday morning status ✅</div></div>
         <div class="timeline-item"><div class="time">Mar 14 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 38, quiet Saturday continues, weekend mode active ✅</div></div>
@@ -301,10 +305,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <div class="timeline-item"><div class="time">Mar 13 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 37, quiet overnight continues, no new activity ✅</div></div>
         <div class="timeline-item"><div class="time">Mar 12 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 36, quiet Thursday continues, monitoring mode ✅</div></div>
         <div class="timeline-item"><div class="time">Mar 12 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 36, quiet overnight continues, no new activity ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 11 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 35, quiet Wednesday continues, monitoring mode ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 11 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 35, quiet overnight continues, no new activity ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 10 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 34, quiet Tuesday continues, monitoring mode ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 10 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 34, quiet overnight continues, no new activity ✅</div></div>
       </div>
     </div>
   </div>
@@ -341,7 +341,7 @@ const tasks=[
   {id:22,title:'Morning dashboard update — Feb 28',tag:'system',tagLabel:'System',status:'done',date:'Feb 28 ✅'},
   {id:23,title:'Dashboard morning update — Mar 4',tag:'system',tagLabel:'System',status:'done',date:'Mar 4 ✅'},
   {id:7,title:'Gmail programmatic access setup',tag:'gmail',tagLabel:'Gmail',status:'backlog',date:'Pending'},
-  {id:8,title:'Build South Florida Psalter website',tag:'psalter',tagLabel:'Psalter',status:'backlog',date:'Theo queued'},
+  {id:8,title:'Build South Florida Psalter website',tag:'psalter',tagLabel:'Psalter',status:'done',date:'Mar 15 ✅ deployed'},
   {id:9,title:'CCLI adoption strategy',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Josiah done ✅'},
   {id:10,title:'Social media strategy for SFP',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Mara done ✅'},
   {id:11,title:'Research arm — Psalms in Christian worship',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Elise done ✅'},
@@ -379,6 +379,23 @@ function drop(e){
   const id=parseInt(e.dataTransfer.getData('text/plain'));
   const newStatus=e.currentTarget.dataset.status;
   const task=tasks.find(t=>t.id===id);
+  if(task){task.status=newStatus;renderKanban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
+ewStatus=e.currentTarget.dataset.status;
+  const task=tasks.find(t=>t.id===id);
+  if(task){task.status=newStatus;renderKanban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
+sk=tasks.find(t=>t.id===id);
   if(task){task.status=newStatus;renderKanban()}
 }
 
