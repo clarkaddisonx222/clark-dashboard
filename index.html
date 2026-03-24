@@ -86,7 +86,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .cost-row:last-child{border:none}
 .cost-row .cost-label{color:var(--text2)}
 .cost-row .cost-val{font-weight:600;font-variant-numeric:tabular-nums}
-@media(max-width:600px){body{padding:12px}.header h1{font-size:18px}.card .value{font-size:22px}.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){body{padding:12px}.header h1{font-size:18px}.card .value{font-size:22px}.grid-4{grid-template-columns:repeat(2,1fr))}}
 </style>
 </head>
 <body>
@@ -114,13 +114,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
     <div class="card" style="animation-delay:.3s">
       <h3>💰 API Costs Today</h3>
-      <div class="value" style="color:var(--green)">$0.00</div>
-      <div class="label">March 23 spend<br>OpenRouter: 2 cron sessions today</div>
+      <div class="value" style="color:var(--green)">$0.03</div>
+      <div class="label">March 24 spend<br>March total: $32.73</div>
     </div>
     <div class="card" style="animation-delay:.4s">
       <h3>📅 Session</h3>
       <div class="value" style="font-size:16px" id="today"></div>
-      <div class="label">Day 45 • Last Work: Feb 28 (Psalm 4) • 23 days quiet</div>
+      <div class="label">Day 46 • Last Work: Feb 28 (Psalm 4) • 24 days quiet</div>
     </div>
   </div>
   <div class="section-title">💳 Cost & Usage Breakdown</div>
@@ -130,14 +130,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div class="cost-row"><span class="cost-label">Nexos Claude Opus 4.6</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
       <div class="cost-row"><span class="cost-label">Nexos Claude Sonnet 4.5</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
       <div class="cost-row"><span class="cost-label">Nexos Grok 4</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
-      <div class="cost-row"><span class="cost-label">Kimi K2.5 (OpenRouter)</span><span class="cost-val">~$0.14</span></div>
-      <div class="cost-row"><span class="cost-label"><strong>Total Today</strong></span><span class="cost-val"><strong>~$0.14</strong></span></div>
+      <div class="cost-row"><span class="cost-label">Kimi K2.5 (OpenRouter)</span><span class="cost-val">~$0.03</span></div>
+      <div class="cost-row"><span class="cost-label"><strong>Total Today</strong></span><span class="cost-val"><strong>~$0.03</strong></span></div>
     </div>
     <div class="card">
       <h3>Token Usage</h3>
-      <div class="cost-row"><span class="cost-label">Input tokens (today)</span><span class="cost-val">~35K</span></div>
-      <div class="cost-row"><span class="cost-label">Output tokens (today)</span><span class="cost-val">~2K</span></div>
-      <div class="cost-row"><span class="cost-label">Sessions started</span><span class="cost-val">2</span></div>
+      <div class="cost-row"><span class="cost-label">Input tokens (today)</span><span class="cost-val">~8K</span></div>
+      <div class="cost-row"><span class="cost-label">Output tokens (today)</span><span class="cost-val">~1K</span></div>
+      <div class="cost-row"><span class="cost-label">Sessions started</span><span class="cost-val">1</span></div>
       <div class="cost-row"><span class="cost-label">Sub-agents spawned</span><span class="cost-val">0</span></div>
       <div class="cost-row"><span class="cost-label">Compactions</span><span class="cost-val">0</span></div>
     </div>
@@ -256,6 +256,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <h3 style="margin-top:16px">📜 Recent Activity</h3>
       <div class="timeline">
+        <div class="timeline-item"><div class="time">Mar 24 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 46, quiet period continues at 24 days, monitoring mode, awaiting direction ✅</div></div>
         <div class="timeline-item"><div class="time">Mar 21 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 45, quiet Saturday continues, monitoring mode, awaiting direction ✅</div></div>
         <div class="timeline-item"><div class="time">Mar 20 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 44, Elise submits blog article for competition, monitoring mode ✅</div></div>
         <div class="timeline-item"><div class="time">Mar 19 — 8:49 PM UTC</div><div class="event">Writing competition restarted — Elise vs Mira, topic: "When You Don't Know What to Pray", deadline Mar 20 5 PM UTC ✍️</div></div>
@@ -264,12 +265,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <div class="timeline-item"><div class="time">Mar 17 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 41, quiet day continues, monitoring mode, awaiting direction ✅</div></div>
         <div class="timeline-item"><div class="time">Mar 16 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 40, SFP website live, blog launched with first post ✅</div></div>
         <div class="timeline-item"><div class="time">Mar 15 — 11:00 PM UTC</div><div class="event">Elise completes first blog post — "Why the Psalms Matter" published to 95 Theses series ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 15 — 6:00 PM UTC</div><div class="event">SFP Website redesign deployed — new logo, hero slideshow, dark theme, resources section ✅</div></div>
       </div>
     </div>
   </div>
   <div style="text-align:center;padding:32px 0;color:var(--text2);font-size:12px">
-    Clark Addison — AI Executive Assistant • Built with OpenClaw • March 2026 • Updated Monday, Mar 23 8:30 PM UTC
+    Clark Addison — AI Executive Assistant • Built with OpenClaw • March 2026 • Updated Tuesday, Mar 24 10:00 AM UTC
   </div>
 </div>
 <script>
@@ -299,6 +299,7 @@ const tasks=[
   {id:25,title:'Dashboard morning update — Mar 20',tag:'system',tagLabel:'System',status:'done',date:'Mar 20 ✅'},
   {id:26,title:'Elise blog article — When You Don\'t Know What to Pray',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Mar 20 ✅ submitted'},
   {id:27,title:'Dashboard afternoon update — Mar 21',tag:'system',tagLabel:'System',status:'done',date:'Mar 21 ✅'},
+  {id:28,title:'Dashboard morning update — Mar 24',tag:'system',tagLabel:'System',status:'done',date:'Mar 24 ✅'},
   {id:7,title:'Gmail programmatic access setup',tag:'gmail',tagLabel:'Gmail',status:'backlog',date:'Pending'},
   {id:8,title:'Build South Florida Psalter website',tag:'psalter',tagLabel:'Psalter',status:'done',date:'Mar 15 ✅ deployed'},
   {id:9,title:'CCLI adoption strategy',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Josiah done ✅'},
@@ -344,50 +345,4 @@ function drop(e){
 renderKanban();
 </script>
 </body>
-</html>
-seInt(e.dataTransfer.getData('text/plain'));
-  const newStatus=e.currentTarget.dataset.status;
-  const task=tasks.find(t=>t.id===id);
-  if(task){task.status=newStatus;renderKanban()}
-}
-
-renderKanban();
-</script>
-</body>
-</html>
-y>
-</html>
-'));
-  const newStatus=e.currentTarget.dataset.status;
-  const task=tasks.find(t=>t.id===id);
-  if(task){task.status=newStatus;renderKanban()}
-}
-
-renderKanban();
-</script>
-</body>
-</html>
-seInt(e.dataTransfer.getData('text/plain'));
-  const newStatus=e.currentTarget.dataset.status;
-  const task=tasks.find(t=>t.id===id);
-  if(task){task.status=newStatus;renderKanban()}
-}
-
-renderKanban();
-</script>
-</body>
-</html>
-y>
-</html>
-seInt(e.dataTransfer.getData('text/plain'));
-  const newStatus=e.currentTarget.dataset.status;
-  const task=tasks.find(t=>t.id===id);
-  if(task){task.status=newStatus;renderKanban()}
-}
-
-renderKanban();
-</script>
-</body>
-</html>
-y>
 </html>
