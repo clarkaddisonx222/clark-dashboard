@@ -10,6 +10,8 @@
 :root{--bg:#0f172a;--card:#1e293b;--card2:#273548;--accent:#3b82f6;--green:#22c55e;--yellow:#eab308;--red:#ef4444;--purple:#a855f7;--pink:#ec4899;--text:#e2e8f0;--text2:#94a3b8;--border:#334155;--shadow:0 4px 6px -1px rgba(0,0,0,.3)}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:20px}
 .container{max-width:1400px;margin:0 auto}
+
+/* Header */
 .header{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap;gap:16px}
 .header h1{font-size:24px;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .header .subtitle{color:var(--text2);font-size:14px;margin-top:4px}
@@ -18,16 +20,24 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .status-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
 #clock{font-size:14px;color:var(--text2);font-variant-numeric:tabular-nums}
+
+/* Grid */
 .grid{display:grid;gap:20px;margin-bottom:24px}
 .grid-4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
 .grid-2{grid-template-columns:repeat(auto-fit,minmax(400px,1fr))}
 .grid-3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+
+/* Cards */
 .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:var(--shadow);border:1px solid var(--border);animation:fadeIn .5s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .card h3{font-size:14px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .card .value{font-size:28px;font-weight:700}
 .card .label{font-size:12px;color:var(--text2);margin-top:4px}
+
+/* Section headers */
 .section-title{font-size:18px;font-weight:700;margin:32px 0 16px;display:flex;align-items:center;gap:10px}
+
+/* Org Chart */
 .org-chart{overflow-x:auto;padding:20px 0}
 .org-node{background:var(--card);border:2px solid var(--border);border-radius:10px;padding:12px 16px;text-align:center;min-width:140px;position:relative}
 .org-node.active{border-color:var(--accent)}
@@ -46,6 +56,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .org-sub .org-node{min-width:120px;padding:8px 12px}
 .org-sub .org-node .role{font-size:11px}
 .org-sub .org-node .desc{font-size:10px}
+
+/* Kanban */
 .kanban{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;min-height:400px}
 @media(max-width:900px){.kanban{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:500px){.kanban{grid-template-columns:1fr}}
@@ -65,6 +77,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .tag-org{background:rgba(34,197,94,.2);color:var(--green)}
 .tag-future{background:rgba(234,179,8,.2);color:var(--yellow)}
 .kanban-col.drag-over{background:var(--card2)}
+
+/* Project Overview */
 .progress-bar-container{background:var(--card2);border-radius:20px;height:24px;overflow:hidden;margin:8px 0}
 .progress-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--purple));border-radius:20px;transition:width 1s ease;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}
 .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:16px 0}
@@ -73,24 +87,38 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .stat-item .stat-label{font-size:11px;color:var(--text2);margin-top:4px}
 .status-row{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}
 .status-item{font-size:12px;display:flex;align-items:center;gap:4px}
+
+/* Timeline */
 .timeline{position:relative;padding-left:24px}
 .timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border)}
 .timeline-item{position:relative;margin-bottom:16px;padding-left:16px}
 .timeline-item::before{content:'';position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--card)}
 .timeline-item .time{font-size:11px;color:var(--text2);font-variant-numeric:tabular-nums}
 .timeline-item .event{font-size:13px;margin-top:2px}
+
+/* Quick Links */
 .quick-links{display:flex;gap:12px;flex-wrap:wrap}
 .quick-link{background:var(--card2);padding:10px 16px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13px;display:flex;align-items:center;gap:8px;transition:background .2s}
 .quick-link:hover{background:var(--accent);color:#fff}
+
+/* Cost Panel */
 .cost-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
 .cost-row:last-child{border:none}
 .cost-row .cost-label{color:var(--text2)}
 .cost-row .cost-val{font-weight:600;font-variant-numeric:tabular-nums}
-@media(max-width:600px){body{padding:12px}.header h1{font-size:18px}.card .value{font-size:22px}.grid-4{grid-template-columns:repeat(2,1fr))}}
+
+/* Responsive */
+@media(max-width:600px){
+  body{padding:12px}
+  .header h1{font-size:18px}
+  .card .value{font-size:22px}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+}
 </style>
 </head>
 <body>
 <div class="container">
+  <!-- Header -->
   <div class="header">
     <div>
       <h1>🤖 Clark Addison — Executive Dashboard</h1>
@@ -101,6 +129,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div class="status-badge"><div class="status-dot"></div> Online</div>
     </div>
   </div>
+
+  <!-- Status Cards -->
   <div class="grid grid-4">
     <div class="card" style="animation-delay:.1s">
       <h3>🧠 Model</h3>
@@ -114,15 +144,17 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
     <div class="card" style="animation-delay:.3s">
       <h3>💰 API Costs Today</h3>
-      <div class="value" style="color:var(--green)">$0.00</div>
-      <div class="label">March 29: TBD<br>March total: ~$41.79</div>
+      <div class="value" style="color:var(--green)">$0.06</div>
+      <div class="label">March 20 spend<br>OpenRouter: 1 cron session today</div>
     </div>
     <div class="card" style="animation-delay:.4s">
       <h3>📅 Session</h3>
       <div class="value" style="font-size:16px" id="today"></div>
-      <div class="label">Day 51 • Last Work: Mar 11 (Psalm 5) • 19 days quiet • AM Update</div>
+      <div class="label">Day 44 • Last Work: Feb 28 (Psalm 4) • 22 days quiet</div>
     </div>
   </div>
+
+  <!-- Cost & Usage -->
   <div class="section-title">💳 Cost & Usage Breakdown</div>
   <div class="grid grid-3">
     <div class="card">
@@ -130,14 +162,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div class="cost-row"><span class="cost-label">Nexos Claude Opus 4.6</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
       <div class="cost-row"><span class="cost-label">Nexos Claude Sonnet 4.5</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
       <div class="cost-row"><span class="cost-label">Nexos Grok 4</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
-      <div class="cost-row"><span class="cost-label">Kimi K2.5 (OpenRouter)</span><span class="cost-val">~$0.00</span></div>
-      <div class="cost-row"><span class="cost-label"><strong>Total Today</strong></span><span class="cost-val"><strong>~$0.00</strong></span></div>
+      <div class="cost-row"><span class="cost-label">Kimi K2.5 (OpenRouter)</span><span class="cost-val">~$0.03</span></div>
+      <div class="cost-row"><span class="cost-label"><strong>Total Today</strong></span><span class="cost-val"><strong>~$0.03</strong></span></div>
     </div>
     <div class="card">
       <h3>Token Usage</h3>
-      <div class="cost-row"><span class="cost-label">Input tokens (today)</span><span class="cost-val">~5K</span></div>
-      <div class="cost-row"><span class="cost-label">Output tokens (today)</span><span class="cost-val">~600</span></div>
-      <div class="cost-row"><span class="cost-label">Sessions started</span><span class="cost-val">1</span></div>
+      <div class="cost-row"><span class="cost-label">Input tokens (today)</span><span class="cost-val">~280K</span></div>
+      <div class="cost-row"><span class="cost-label">Output tokens (today)</span><span class="cost-val">~12K</span></div>
+      <div class="cost-row"><span class="cost-label">Sessions started</span><span class="cost-val">2</span></div>
       <div class="cost-row"><span class="cost-label">Sub-agents spawned</span><span class="cost-val">0</span></div>
       <div class="cost-row"><span class="cost-label">Compactions</span><span class="cost-val">0</span></div>
     </div>
@@ -150,6 +182,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div class="cost-row"><span class="cost-label">🔍 Web Search</span><span class="cost-val" style="color:var(--green)">Active (Brave)</span></div>
     </div>
   </div>
+
+  <!-- Org Chart -->
   <div class="section-title">🏢 Virtual Organization</div>
   <div class="card">
     <div class="org-chart">
@@ -198,6 +232,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
     </div>
   </div>
+
+  <!-- Kanban Board -->
   <div class="section-title">📋 Kanban Board</div>
   <div class="kanban" id="kanban">
     <div class="kanban-col" data-status="backlog" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
@@ -213,10 +249,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div id="col-review"></div>
     </div>
     <div class="kanban-col" data-status="done" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
-      <h4>✅ Done <span class="count" id="count-done">18</span></h4>
+      <h4>✅ Done <span class="count" id="count-done">15</span></h4>
       <div id="col-done"></div>
     </div>
   </div>
+
+  <!-- Project Overview -->
   <div class="section-title">🎵 Pray150 / South Florida Psalter</div>
   <div class="grid grid-2">
     <div class="card">
@@ -256,24 +294,29 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <h3 style="margin-top:16px">📜 Recent Activity</h3>
       <div class="timeline">
-        <div class="timeline-item"><div class="time">Mar 29 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 51 begins, quiet period extended to 19 days, all systems stable ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 28 — 9:15 PM UTC</div><div class="event">Evening Summary — Quiet Sunday wraps up, first fully automated evening summary deployed ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 28 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 50 complete, quiet period at 18 days, all systems stable ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 28 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 50 begins, quiet period at 18 days, stable monitoring mode ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 27 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 49 complete, quiet period at 17 days, all systems stable ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 27 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 49 begins, quiet period at 17 days, stable monitoring mode ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 26 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 48 complete, quiet period at 16 days, all systems stable ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 26 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 48, quiet period at 15 days, stable monitoring mode ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 25 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 47, quiet period extends to 14 days, Psalm 5 production-ready, systems stable ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 24 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 46 complete, quiet period at 13 days, systems stable ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 20 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 44, Elise submits blog article for competition, quiet period continues, monitoring mode ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 19 — 8:49 PM UTC</div><div class="event">Writing competition restarted — Elise vs Mira, topic: "When You Don't Know What to Pray", deadline Mar 20 5 PM UTC ✍️</div></div>
+        <div class="timeline-item"><div class="time">Mar 18 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 42, quiet continues, 22 days since last Psalter work ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 18 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 42, quiet overnight continues, 18 days since last work, monitoring mode ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 17 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 41, quiet day continues, monitoring mode, awaiting direction ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 17 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 41, quiet overnight continues, no new activity ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 16 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 40, quiet afternoon continues, monitoring mode ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 16 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 40, SFP website live, blog launched with first post ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 15 — 11:00 PM UTC</div><div class="event">Elise completes first blog post — "Why the Psalms Matter" published to 95 Theses series ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 15 — 6:00 PM UTC</div><div class="event">SFP Website redesign deployed — new logo, hero slideshow, dark theme, resources section ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 15 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 39, quiet Sunday continues, evening check-in ✅</div></div>
+        <div class="timeline-item"><div class="time">Mar 15 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 39, quiet overnight continues, Sunday morning status ✅</div></div>
       </div>
     </div>
   </div>
+
   <div style="text-align:center;padding:32px 0;color:var(--text2);font-size:12px">
-    Clark Addison — AI Executive Assistant • Built with OpenClaw • March 2026 • Updated Sunday, Mar 29 10:00 AM UTC
+    Clark Addison — AI Executive Assistant • Built with OpenClaw • March 2026 • Updated Saturday, Mar 21 10:00 AM UTC
   </div>
 </div>
+
 <script>
+// Clock
 function updateClock(){
   const now=new Date();
   const opts={timeZone:'America/New_York',weekday:'long',year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'};
@@ -283,6 +326,7 @@ function updateClock(){
 }
 updateClock();setInterval(updateClock,1000);
 
+// Kanban data
 const tasks=[
   {id:1,title:'Fix Kimi K2.5 context overflow',tag:'system',tagLabel:'System',status:'done',date:'Feb 7'},
   {id:2,title:'Gmail login via browser',tag:'gmail',tagLabel:'Gmail',status:'done',date:'Feb 7'},
@@ -298,18 +342,7 @@ const tasks=[
   {id:22,title:'Morning dashboard update — Feb 28',tag:'system',tagLabel:'System',status:'done',date:'Feb 28 ✅'},
   {id:23,title:'Dashboard morning update — Mar 4',tag:'system',tagLabel:'System',status:'done',date:'Mar 4 ✅'},
   {id:25,title:'Dashboard morning update — Mar 20',tag:'system',tagLabel:'System',status:'done',date:'Mar 20 ✅'},
-  {id:26,title:'Elise blog article — When You Don\'t Know What to Pray',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Mar 20 ✅ submitted'},
-  {id:27,title:'Dashboard afternoon update — Mar 21',tag:'system',tagLabel:'System',status:'done',date:'Mar 21 ✅'},
-  {id:28,title:'Dashboard morning update — Mar 24',tag:'system',tagLabel:'System',status:'done',date:'Mar 24 ✅'},
-  {id:29,title:'Dashboard morning update — Mar 25',tag:'system',tagLabel:'System',status:'done',date:'Mar 25 ✅'},
-  {id:30,title:'Dashboard morning update — Mar 26',tag:'system',tagLabel:'System',status:'done',date:'Mar 26 ✅'},
-  {id:31,title:'Dashboard afternoon update — Mar 26',tag:'system',tagLabel:'System',status:'done',date:'Mar 26 PM ✅'},
-  {id:32,title:'Dashboard morning update — Mar 27',tag:'system',tagLabel:'System',status:'done',date:'Mar 27 ✅'},
-  {id:33,title:'Dashboard afternoon update — Mar 27',tag:'system',tagLabel:'System',status:'done',date:'Mar 27 PM ✅'},
-  {id:34,title:'Dashboard morning update — Mar 28',tag:'system',tagLabel:'System',status:'done',date:'Mar 28 ✅'},
-  {id:35,title:'Dashboard afternoon update — Mar 28',tag:'system',tagLabel:'System',status:'done',date:'Mar 28 PM ✅'},
-  {id:36,title:'Evening Summary — Mar 28',tag:'system',tagLabel:'System',status:'done',date:'Mar 28 PM ✅ automated'},
-  {id:37,title:'Dashboard morning update — Mar 29',tag:'system',tagLabel:'System',status:'done',date:'Mar 29 AM ✅'},
+  {id:26,title:'Elise blog article — When You Don't Know What to Pray',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Mar 20 ✅ submitted'},
   {id:7,title:'Gmail programmatic access setup',tag:'gmail',tagLabel:'Gmail',status:'backlog',date:'Pending'},
   {id:8,title:'Build South Florida Psalter website',tag:'psalter',tagLabel:'Psalter',status:'done',date:'Mar 15 ✅ deployed'},
   {id:9,title:'CCLI adoption strategy',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Josiah done ✅'},
@@ -333,7 +366,7 @@ function renderKanban(){
       card.className='kanban-card';
       card.draggable=true;
       card.dataset.id=t.id;
-      card.innerHTML='<div class="task-title">'+t.title+'</div><div class="task-meta"><span class="tag tag-'+t.tag+'">'+t.tagLabel+'</span><span>'+t.date+'</span></div>';
+      card.innerHTML=`<div class="task-title">${t.title}</div><div class="task-meta"><span class="tag tag-${t.tag}">${t.tagLabel}</span><span>${t.date}</span></div>`;
       card.ondragstart=e=>{e.dataTransfer.setData('text/plain',t.id);card.classList.add('dragging')};
       card.ondragend=()=>card.classList.remove('dragging');
       col.appendChild(card);
@@ -354,5 +387,114 @@ function drop(e){
 
 renderKanban();
 </script>
+</body>
+</html>
+ewStatus=e.currentTarget.dataset.status;
+  const task=tasks.find(t=>t.id===id);
+  if(task){task.status=newStatus;renderKanban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
+sk=tasks.find(t=>t.id===id);
+  if(task){task.status=newStatus;renderKanban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
+k){task.status=newStatus;renderKanban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
+sk=tasks.find(t=>t.id===id);
+  if(task){task.status=newStatus;renderKanban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
+nban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
+sk=tasks.find(t=>t.id===id);
+  if(task){task.status=newStatus;renderKanban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
+</body>
+</html>
+an();
+</script>
+</body>
+</html>
+nban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
+sk=tasks.find(t=>t.id===id);
+  if(task){task.status=newStatus;renderKanban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
+</body>
+</html>
+ml>
+nban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
+sk=tasks.find(t=>t.id===id);
+  if(task){task.status=newStatus;renderKanban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
+</body>
+</html>
+an();
+</script>
+</body>
+</html>
+nban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
+sk=tasks.find(t=>t.id===id);
+  if(task){task.status=newStatus;renderKanban()}
+}
+
+renderKanban();
+</script>
+</body>
+</html>
 </body>
 </html>
