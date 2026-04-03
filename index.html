@@ -114,13 +114,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     </div>
     <div class="card" style="animation-delay:.3s">
       <h3>💰 API Costs Today</h3>
-      <div class="value" style="color:var(--green)">~$0.06</div>
-      <div class="label">April 2 AM: ~$0.06<br>April total: ~$0.06</div>
+      <div class="value" style="color:var(--green)">~$0.02</div>
+      <div class="label">April 3 AM: ~$0.02<br>April total: ~$0.08</div>
     </div>
     <div class="card" style="animation-delay:.4s">
       <h3>📅 Session</h3>
       <div class="value" style="font-size:16px" id="today"></div>
-      <div class="label">Day 55 • Last Work: Mar 11 (Psalm 5) • 22 days quiet • Morning Update</div>
+      <div class="label">Day 56 • Last Work: Mar 11 (Psalm 5) • 23 days quiet • Morning Update</div>
     </div>
   </div>
   <div class="section-title">💳 Cost & Usage Breakdown</div>
@@ -130,13 +130,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div class="cost-row"><span class="cost-label">Nexos Claude Opus 4.6</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
       <div class="cost-row"><span class="cost-label">Nexos Claude Sonnet 4.5</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
       <div class="cost-row"><span class="cost-label">Nexos Grok 4</span><span class="cost-val" style="color:var(--green)">$0.00 (free)</span></div>
-      <div class="cost-row"><span class="cost-label">Kimi K2.5 (OpenRouter)</span><span class="cost-val">~$0.15</span></div>
-      <div class="cost-row"><span class="cost-label"><strong>Total Today</strong></span><span class="cost-val"><strong>~$0.06</strong></span></div>
+      <div class="cost-row"><span class="cost-label">Kimi K2.5 (OpenRouter)</span><span class="cost-val">~$0.08</span></div>
+      <div class="cost-row"><span class="cost-label"><strong>Total Today</strong></span><span class="cost-val"><strong>~$0.02</strong></span></div>
     </div>
     <div class="card">
       <h3>Token Usage</h3>
-      <div class="cost-row"><span class="cost-label">Input tokens (today)</span><span class="cost-val">~12K</span></div>
-      <div class="cost-row"><span class="cost-label">Output tokens (today)</span><span class="cost-val">~1.1K</span></div>
+      <div class="cost-row"><span class="cost-label">Input tokens (today)</span><span class="cost-val">~8K</span></div>
+      <div class="cost-row"><span class="cost-label">Output tokens (today)</span><span class="cost-val">~900</span></div>
       <div class="cost-row"><span class="cost-label">Sessions started</span><span class="cost-val">1</span></div>
       <div class="cost-row"><span class="cost-label">Sub-agents spawned</span><span class="cost-val">0</span></div>
       <div class="cost-row"><span class="cost-label">Compactions</span><span class="cost-val">0</span></div>
@@ -213,7 +213,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       <div id="col-review"></div>
     </div>
     <div class="kanban-col" data-status="done" ondrop="drop(event)" ondragover="dragover(event)" ondragleave="dragleave(event)">
-      <h4>✅ Done <span class="count" id="count-done">20</span></h4>
+      <h4>✅ Done <span class="count" id="count-done">21</span></h4>
       <div id="col-done"></div>
     </div>
   </div>
@@ -256,6 +256,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
       </div>
       <h3 style="margin-top:16px">📜 Recent Activity</h3>
       <div class="timeline">
+        <div class="timeline-item"><div class="time">Apr 3 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 56 begins, quiet period extends to 23 days, April costs at ~$0.08, all systems stable ✅</div></div>
         <div class="timeline-item"><div class="time">Apr 2 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 55 begins, quiet period extends to 22 days, April costs holding at ~$0.06, all systems stable ✅</div></div>
         <div class="timeline-item"><div class="time">Apr 2 — 12:00 AM UTC</div><div class="event">Evening Summary — April 1 complete, Day 55 begins, quiet period at 22 days, April total spend ~$0.06, monthly automation stable ✅</div></div>
         <div class="timeline-item"><div class="time">Apr 1 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 54 complete, quiet period holds at 21 days, April day 1 costs ~$0.06, all systems stable ✅</div></div>
@@ -265,21 +266,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <div class="timeline-item"><div class="time">Mar 30 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 52 complete, quiet period at 20 days, cost ~$0.79, all systems stable ✅</div></div>
         <div class="timeline-item"><div class="time">Mar 30 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 52 begins, quiet period at 20 days, cost monitoring shows ~$0.79 spend, all systems stable ✅</div></div>
         <div class="timeline-item"><div class="time">Mar 29 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 51 complete, quiet period at 19 days, all systems stable ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 29 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 51 begins, quiet period extended to 19 days, all systems stable ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 28 — 9:15 PM UTC</div><div class="event">Evening Summary — Quiet Sunday wraps up, first fully automated evening summary deployed ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 28 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 50 complete, quiet period at 18 days, all systems stable ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 28 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 50 begins, quiet period at 18 days, stable monitoring mode ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 27 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 49 complete, quiet period at 17 days, all systems stable ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 27 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 49 begins, quiet period at 17 days, stable monitoring mode ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 26 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 48 complete, quiet period at 16 days, all systems stable ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 26 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 48, quiet period at 15 days, stable monitoring mode ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 25 — 10:00 AM UTC</div><div class="event">Dashboard morning update — Day 47, quiet period extends to 14 days, Psalm 5 production-ready, systems stable ✅</div></div>
-        <div class="timeline-item"><div class="time">Mar 24 — 8:30 PM UTC</div><div class="event">Dashboard afternoon update — Day 46 complete, quiet period at 13 days, systems stable ✅</div></div>
       </div>
     </div>
   </div>
   <div style="text-align:center;padding:32px 0;color:var(--text2);font-size:12px">
-    Clark Addison — AI Executive Assistant • Built with OpenClaw • April 2026 • Updated Thursday, Apr 2 10:00 AM UTC
+    Clark Addison — AI Executive Assistant • Built with OpenClaw • April 2026 • Updated Friday, Apr 3 10:00 AM UTC
   </div>
 </div>
 <script>
@@ -327,6 +318,7 @@ const tasks=[
   {id:43,title:'Dashboard afternoon update — Apr 1',tag:'system',tagLabel:'System',status:'done',date:'Apr 1 PM ✅'},
   {id:44,title:'Evening Summary — Apr 1',tag:'system',tagLabel:'System',status:'done',date:'Apr 1 PM ✅ automated'},
   {id:45,title:'Dashboard morning update — Apr 2',tag:'system',tagLabel:'System',status:'done',date:'Apr 2 AM ✅'},
+  {id:46,title:'Dashboard morning update — Apr 3',tag:'system',tagLabel:'System',status:'done',date:'Apr 3 AM ✅'},
   {id:7,title:'Gmail programmatic access setup',tag:'gmail',tagLabel:'Gmail',status:'backlog',date:'Pending'},
   {id:8,title:'Build South Florida Psalter website',tag:'psalter',tagLabel:'Psalter',status:'done',date:'Mar 15 ✅ deployed'},
   {id:9,title:'CCLI adoption strategy',tag:'psalter',tagLabel:'Psalter',status:'review',date:'Josiah done ✅'},
